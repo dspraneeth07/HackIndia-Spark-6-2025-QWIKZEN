@@ -82,8 +82,12 @@ const AIResumeAnalysis: React.FC<AIResumeAnalysisProps> = ({ resumeData }) => {
 
   const getResumeAnalysisFromGemini = async (resumeData: any): Promise<string> => {
     try {
-      const API_KEY = "AIzaSyDRuULswOC1iFSJr83VqRaeP1g8p0Vn4Lc";
-      const API_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent";
+      const API_KEY = import.meta.env.VITE_GEMINI_API_KEY;
+      const API_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent";
+      
+      if (!API_KEY) {
+        throw new Error("Gemini API key is not configured");
+      }
       
       const prompt = `
         You are a professional resume analyst and career coach. Analyze the following resume data and provide a professional assessment.
@@ -128,8 +132,12 @@ const AIResumeAnalysis: React.FC<AIResumeAnalysisProps> = ({ resumeData }) => {
 
   const getInterviewQuestionsFromGemini = async (resumeData: any): Promise<Question[]> => {
     try {
-      const API_KEY = "AIzaSyDRuULswOC1iFSJr83VqRaeP1g8p0Vn4Lc";
-      const API_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent";
+      const API_KEY = import.meta.env.VITE_GEMINI_API_KEY;
+      const API_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent";
+      
+      if (!API_KEY) {
+        throw new Error("Gemini API key is not configured");
+      }
       
       const prompt = `
         You are a hiring manager interviewing a candidate for a ${resumeData.personalInfo?.jobTitle || "professional"} position.

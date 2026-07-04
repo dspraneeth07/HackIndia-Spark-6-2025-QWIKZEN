@@ -3,7 +3,7 @@ import { Question } from "@/types/certification";
 
 // Gemini API configuration
 const API_KEY = "AIzaSyDRuULswOC1iFSJr83VqRaeP1g8p0Vn4Lc"; // Using the same API key as in geminiApi.ts
-const API_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent";
+const API_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent";
 
 /**
  * Generate a set of multiple-choice questions for a certification exam

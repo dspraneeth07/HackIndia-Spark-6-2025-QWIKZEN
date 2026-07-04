@@ -2,7 +2,7 @@
 // This file contains API functions for ATS scoring using Google Gemini API
 
 const API_KEY = "AIzaSyDRuULswOC1iFSJr83VqRaeP1g8p0Vn4Lc";
-const API_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent";
+const API_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent";
 
 export interface ATSScoreData {
   overallScore: number;

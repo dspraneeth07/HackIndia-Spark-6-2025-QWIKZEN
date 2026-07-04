@@ -13,7 +13,7 @@ export const transformText = async (text: string) => {
     
     // Use the Gemini API (this will be changed to Hugging Face in production)
     const API_KEY = "AIzaSyDRuULswOC1iFSJr83VqRaeP1g8p0Vn4Lc"; // This is just a placeholder for demo
-    const API_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent";
+    const API_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent";
     
     try {
       const response = await fetch(`${API_URL}?key=${API_KEY}`, {
@@ -59,7 +59,7 @@ export const analyzeResume = async (resumeData: any, analysisType: 'general' | '
   console.log(`Analyzing resume for ${analysisType} analysis:`, resumeData);
   
   const API_KEY = "AIzaSyDRuULswOC1iFSJr83VqRaeP1g8p0Vn4Lc";
-  const API_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent";
+  const API_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent";
   
   let prompt = '';
   
